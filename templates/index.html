@@ -97,6 +97,23 @@
         const audio = new Audio("http://127.0.0.1:5000" + data.audio_path + `?t=${Date.now()}`);
         audio.play();
 
+        if (data.reply.startsWith("__OPEN_BROWSER__")) {
+          const url = data.reply.replace("__OPEN_BROWSER__", "").trim();
+          setTimeout(() => {
+            window.open(url, "_blank");
+          }, 1000);
+        }
+
+        if (data.reply.includes("https://www.google.com/search")) {
+          const match = data.reply.match(/https:\/\/www\.google\.com\/search\?q=[^\s]+/);
+          if (match) {
+            const searchURL = match[0];
+            setTimeout(() => {
+              window.open(searchURL, "_blank");
+            }, 1000);
+          }
+        }
+
       } catch (err) {
         responseTextEl.textContent = "Failed to get a response.";
         console.error("TTS Error:", err);

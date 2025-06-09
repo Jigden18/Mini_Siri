@@ -1,0 +1,8 @@
+# MAKE GOOGLE REQUESTS INSTEAD OF  THE ELSE REPHRASE ONE ✔️
+# FOLLOW UP WITH THE FLASK GEMINI INTEGRATION TO SHOW NEXT WEEK AS PER THE REPO GUIDE IN GITHUB
+# https://github.com/google-gemini/gemini-api-quickstart
+
+open router
+
+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
+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
